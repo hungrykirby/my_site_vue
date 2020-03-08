@@ -1,6 +1,14 @@
-# my_site_vue
+# きゃりかつ(塙克樹)の公式サイトリポジトリ
 
-> My 202003 Site with vue and nuxt
+サイトの設計からいろいろ勉強したくて2019年始めに作ったものを `Vue` `Nuxt` `Netlify` で書き直すもの。
+
+前回は絶妙にダサいうえにサイト速度がとても遅かったのでそこを改善する
+
+[きゃりかつツーム(まだSinatraで作っていたやつです)](https://www.hanakatsuruby.me/)
+
+正直herokuで運用する意味もなかったので、移行を決心したのは偉いが決断が遅い。
+
+URLにrubyって入れたけど、これが公開されると `Ruby` がベースではなくなる。
 
 ## Build Setup
 
@@ -18,5 +26,3 @@ $ yarn start
 # generate static project
 $ yarn generate
 ```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
