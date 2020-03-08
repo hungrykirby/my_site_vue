@@ -1,11 +1,18 @@
 
 export default {
+  /*
+  ** Error 404 https://liginc.co.jp/449575
+  */
+  generate: {
+	  fallback: true
+  },
   mode: 'universal',
   /*
   ** Headers of the page
   */
   head: {
     title: process.env.npm_package_name || '',
+    titleTemplate: '%s - きゃりかつルーム',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -23,6 +30,8 @@ export default {
   ** Global CSS
   */
   css: [
+    'reset-css',
+    '~/assets/scss/style.scss'
   ],
   /*
   ** Plugins to load before mounting the App

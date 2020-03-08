@@ -1,39 +1,33 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        my_site_vue
-      </h1>
-      <h2 class="subtitle">
-        My 202003 Site with vue and nuxt
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+  <div>
+    <TheHeader/>
+    <div class="container">
+      <div>
+        <h1 class="title">
+          きゃりかつルーム
+        </h1>
+        <h2 class="subtitle">
+          ようこそ<br>きゃりかつの作りかけの部屋へ
+        </h2>
       </div>
     </div>
+    <TheFooter/>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import TheHeader from '~/components/common/TheHeader.vue';
+import TheFooter from '~/components/common/TheFooter.vue';
 
 export default {
   components: {
-    Logo
+    TheHeader,
+    TheFooter
+  },
+  head() {
+    return {
+      title: 'index'
+    }
   }
 }
 </script>
