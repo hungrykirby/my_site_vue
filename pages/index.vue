@@ -1,39 +1,57 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        my_site_vue
-      </h1>
-      <h2 class="subtitle">
-        My 202003 Site with vue and nuxt
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+  <div>
+    <TheHeader/>
+    <div class="container">
+      <div>
+        <h1 class="title">
+          きゃりかつルーム
+        </h1>
+        <h2 class="subtitle">
+          ようこそ<br>きゃりかつの作りかけの部屋へ
+        </h2>
+        <Work
+          v-for="(post,i ) in posts"
+          :key="i"
+          :title="post.fields.title"
+          :body="post.fields.body.content[0].content[0].value"
+          :id="post.sys.id"
+          :date="post.sys.updatedAt"
+        />
       </div>
     </div>
+    <TheFooter/>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import TheHeader from '~/components/common/TheHeader.vue';
+import TheFooter from '~/components/common/TheFooter.vue';
+import Work from '~/components/work.vue';
+import { createClient } from '~/plugins/contentful.js';
+
+const client = createClient()
 
 export default {
+  transition: 'slide-left',
   components: {
-    Logo
+    TheHeader,
+    TheFooter,
+    Work
+  },
+  head() {
+    return {
+      title: 'index'
+    }
+  },
+  asyncData({ env, params }) {
+    return client
+      .getEntries(env.CTF_BLOG_POST_TYPE_ID)
+      .then(entries => {
+        return {
+          posts: entries.items
+        }
+      })
+      .catch(console.error)
   }
 }
 </script>
