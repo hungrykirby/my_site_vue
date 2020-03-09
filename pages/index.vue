@@ -9,6 +9,14 @@
         <h2 class="subtitle">
           ようこそ<br>きゃりかつの作りかけの部屋へ
         </h2>
+        <Work
+          v-for="(post,i ) in posts"
+          :key="i"
+          :title="post.fields.title"
+          :body="post.fields.body.content[0].content[0].value"
+          :id="post.sys.id"
+          :date="post.sys.updatedAt"
+        />
       </div>
     </div>
     <TheFooter/>
@@ -18,16 +26,32 @@
 <script>
 import TheHeader from '~/components/common/TheHeader.vue';
 import TheFooter from '~/components/common/TheFooter.vue';
+import Work from '~/components/work.vue';
+import { createClient } from '~/plugins/contentful.js';
+
+const client = createClient()
 
 export default {
+  transition: 'slide-left',
   components: {
     TheHeader,
-    TheFooter
+    TheFooter,
+    Work
   },
   head() {
     return {
       title: 'index'
     }
+  },
+  asyncData({ env, params }) {
+    return client
+      .getEntries(env.CTF_BLOG_POST_TYPE_ID)
+      .then(entries => {
+        return {
+          posts: entries.items
+        }
+      })
+      .catch(console.error)
   }
 }
 </script>
