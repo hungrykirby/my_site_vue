@@ -13,7 +13,9 @@
           v-for="(post,i ) in posts"
           :key="i"
           :title="post.fields.title"
-          :body="post.fields.body.content[0].content[0].value"
+          :concept="post.fields.concept"
+          :main_image_url="post.fields.main_image.fields.file.url"
+          :main_image_title="post.fields.main_image.fields.title"
           :id="post.sys.id"
           :date="post.sys.updatedAt"
         />
@@ -57,34 +59,4 @@ export default {
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>

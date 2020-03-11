@@ -6,9 +6,10 @@
     class="wrapper"
   >
     <article class="work">
-      <p class="work_title">{{ title }}</p>
-      <p class="work_text">{{ body }}</p>
-      <p class="work_date">{{ date }}</p>
+      <p class="title">{{ title }}</p>
+      <p class="concept">{{ concept }}</p>
+      <p class="date">{{ date }}</p>
+      <img :src="main_image_url" :alt="main_image_title" />
     </article>
   </nuxt-link>
 </template>
@@ -23,11 +24,19 @@ export default {
       type: String,
       default: ''
     },
-    body: {
+    date: {
       type: String,
       default: ''
     },
-    date: {
+    concept: {
+      type: String,
+      default: ''
+    },
+    main_image_url: {
+      type: String,
+      default: ''
+    },
+    main_image_title: {
       type: String,
       default: ''
     }

@@ -5,7 +5,6 @@
     </h1>
     <p class="slug_date">{{ article.sys.updatedAt }}</p>
     <div>
-      {{ article.fields.body.content[0].content[0].value }}
     </div>
   </section>
 </template>
