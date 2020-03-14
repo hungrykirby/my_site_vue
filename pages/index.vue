@@ -6,9 +6,6 @@
         <h1 class="title">
           きゃりかつルーム
         </h1>
-        <h2 class="subtitle">
-          ようこそ<br>きゃりかつの作りかけの部屋へ
-        </h2>
         <Work
           v-for="(post,i ) in posts"
           :key="i"
@@ -16,11 +13,9 @@
           :concept="post.fields.concept"
           :main_image_url="post.fields.main_image.fields.file.url"
           :main_image_title="post.fields.main_image.fields.title"
-          :members="post.fields.members"
-          :creater_roles="post.fields.creater_role"
-          :links="post.fields.links"
           :id="post.sys.id"
           :date="post.sys.updatedAt"
+          :name_for_class="`work-${i}`"
         />
       </div>
     </div>
