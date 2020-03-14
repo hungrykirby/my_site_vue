@@ -16,6 +16,9 @@
           :concept="post.fields.concept"
           :main_image_url="post.fields.main_image.fields.file.url"
           :main_image_title="post.fields.main_image.fields.title"
+          :members="post.fields.members"
+          :creater_roles="post.fields.creater_role"
+          :links="post.fields.links"
           :id="post.sys.id"
           :date="post.sys.updatedAt"
         />

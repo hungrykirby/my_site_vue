@@ -7,9 +7,8 @@
   >
     <article class="work">
       <p class="title">{{ title }}</p>
-      <p class="concept">{{ concept }}</p>
       <p class="date">{{ date }}</p>
-      <img :src="main_image_url" :alt="main_image_title" />
+      <img class="top_image" :src="main_image_url" :alt="main_image_title" />
     </article>
   </nuxt-link>
 </template>
@@ -39,6 +38,18 @@ export default {
     main_image_title: {
       type: String,
       default: ''
+    },
+    creater_roles: {
+      type: Array,
+      default: Array.new
+    },
+    links:{
+      type: Array,
+      default: Array.new
+    },
+    members: {
+      type: JSON,
+      default: JSON.new
     }
   }
 }
