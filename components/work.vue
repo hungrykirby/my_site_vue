@@ -1,22 +1,30 @@
 <template>
-  <nuxt-link
-    :to="{ name: 'work-slug', params: {
-      sys: id
-    }}"
-    v-bind:class="[{active:hoge}, `${name_for_class}`]"
+  <div
+    class="top"
+    v-bind:class="[`w-type-${windowTypeNum}`]"
   >
-    <article class="work">
-      <p class="title">{{ title }}</p>
-      <p class="date">{{ date }}</p>
-      <img class="top_image" :src="main_image_url" :alt="main_image_title" />
-    </article>
-  </nuxt-link>
+    <nuxt-link
+      :to="{ name: 'work-slug', params: {
+        sys: id
+      }}"
+      class="wrapper"
+      v-bind:class="[`${name_for_class}`]"
+    >
+      <article class="work">
+        <div>
+          <p class="title">{{ title }}</p>
+          <p class="date">{{ published_at }}</p>
+        </div>
+        <img class="top_image" :src="main_image_url" :alt="main_image_title" />
+      </article>
+    </nuxt-link>
+  </div>
 </template>
 <script>
 export default {
   data() {
     return {
-      hoge: {}
+      windowTypeNum: "0"
     }
   },
   created() {
@@ -33,10 +41,14 @@ export default {
   methods: {
     handleResize: function() {
       if (process.browser) {
-        if (window.innerWidth <= 800) {
-          this.hoge = true
+        if (window.innerWidth < 460) {
+          this.windowTypeNum = "1"
+        } else if (window.innerWidth < 640){
+          this.windowTypeNum = "2"
+        } else if (window.innerWidth < 960){
+          this.windowTypeNum = "3"
         } else {
-          this.hoge = false
+          this.windowTypeNum = "4"
         }
       }
     }
@@ -53,6 +65,10 @@ export default {
     date: {
       type: String,
       default: ''
+    },
+    published_at: {
+      type: Date,
+      default: Date.now()
     },
     concept: {
       type: String,

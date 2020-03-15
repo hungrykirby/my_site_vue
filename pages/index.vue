@@ -2,15 +2,16 @@
   <div>
     <TheHeader/>
     <div class="container">
+      <h1 class="title">
+        きゃりかつルーム
+      </h1>
       <div>
-        <h1 class="title">
-          きゃりかつルーム
-        </h1>
         <Work
           v-for="(post,i ) in posts"
           :key="i"
           :title="post.fields.title"
           :concept="post.fields.concept"
+          :published_at="post.fields.publishedAt"
           :main_image_url="post.fields.main_image.fields.file.url"
           :main_image_title="post.fields.main_image.fields.title"
           :id="post.sys.id"
