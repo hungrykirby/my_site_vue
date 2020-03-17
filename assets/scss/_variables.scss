@@ -4,4 +4,26 @@ $color-lightgray: #eee;
 $color-on-pict: rgba(230, 230, 230, 0.7);
 
 $title-font-size: 20px;
-$date-font-size: 12px
+$date-font-size: 12px;
+
+$break-point-small: 460px;
+$break-point-medium: 640px;
+$break-point-large: 960px;
+
+@mixin small-media {
+  @media screen and (max-width: $break-point-small) {
+    @content
+  }
+}
+
+@mixin medium-media {
+  @media screen and (max-width: $break-point-medium) and (min-width: $break-point-small) {
+    @content
+  }
+}
+
+@mixin large-media {
+  @media screen and (max-width: $break-point-large) and (min-width: $break-point-medium) {
+    @content
+  }
+}

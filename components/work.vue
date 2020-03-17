@@ -1,7 +1,7 @@
 <template>
   <div
     class="top"
-    v-bind:class="[`w-type-${windowTypeNum}`]"
+    v-bind:class="{'scroll-active': isInScreen}"
   >
     <nuxt-link
       :to="{ name: 'work-slug', params: {
@@ -24,34 +24,41 @@
 export default {
   data() {
     return {
-      windowTypeNum: "0"
+      scrollY: 0,
+      height: 0,
+      position: 0,
     }
   },
-  created() {
-    if (process.browser) {
-      window.addEventListener('resize', this.handleResize)
-      this.handleResize()
-    }
+  mounted() {
+    window.addEventListener('scroll', this.onScroll)
+    window.addEventListener('resize', this.onResize)
+    window.addEventListener('load', () => {
+      this.onScroll()
+      this.onResize()
+    })
   },
-  destroyed() {
-    if (process.browser) {
-      window.removeEventListener('resize', this.handleResize)
+  computed:{
+    isInScreen(){
+      if(this.height !== 0 && this.position < this.height && window.innerWidth <= 960){        
+        return true
+      }else{
+        return false
+      }
     }
   },
   methods: {
-    handleResize: function() {
-      if (process.browser) {
-        if (window.innerWidth < 460) {
-          this.windowTypeNum = "1"
-        } else if (window.innerWidth < 640){
-          this.windowTypeNum = "2"
-        } else if (window.innerWidth < 960){
-          this.windowTypeNum = "3"
-        } else {
-          this.windowTypeNum = "4"
-        }
+    onScroll () {
+      this.scrollY = window.pageYOffset;
+      this.position = this.getPosition();
+    },
+    onResize () {this.height = document.documentElement.clientHeight},
+    getPosition () {  
+      if(this.$el){
+        return this.$el.getBoundingClientRect().top
+      }else{
+        return 0
       }
-    }
+    },
   },
   props: {
     title: {
@@ -67,8 +74,8 @@ export default {
       default: ''
     },
     published_at: {
-      type: Date,
-      default: Date.now()
+      type: String,
+      default: ''
     },
     concept: {
       type: String,
