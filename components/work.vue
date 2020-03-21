@@ -39,7 +39,9 @@ export default {
   },
   computed:{
     isInScreen(){
-      if(this.height !== 0 && this.position < this.height && window.innerWidth <= 960){        
+      if((this.height !== 0 && this.position < 1 * this.height / 2) ||
+        (process.browser && this.scrollY + this.height - document.body.scrollHeight + 50 >= 0
+      )){
         return true
       }else{
         return false
@@ -51,7 +53,9 @@ export default {
       this.scrollY = window.pageYOffset;
       this.position = this.getPosition();
     },
-    onResize () {this.height = document.documentElement.clientHeight},
+    onResize () {
+      this.height = document.documentElement.clientHeight
+    },
     getPosition () {  
       if(this.$el){
         return this.$el.getBoundingClientRect().top

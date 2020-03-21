@@ -1,9 +1,11 @@
 <template>
-  <div>
-    <transition name="page">
+  <transition name="page">
+    <div class="page">
+      <TheHeader />
       <nuxt />
-    </transition>
-  </div>
+      <TheFooter />
+    </div>
+  </transition>
 </template>
 
 <style>
@@ -32,3 +34,13 @@ html {
   transition: opacity 2s;
 }
 </style>
+<script>
+import TheHeader from '~/components/common/TheHeader.vue';
+import TheFooter from '~/components/common/TheFooter.vue';
+export default {
+  components: {
+    TheHeader,
+    TheFooter
+  }
+}
+</script>
