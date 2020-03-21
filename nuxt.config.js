@@ -18,7 +18,7 @@ export default {
     routes() {
       return Promise.all([
         cdaClient.getEntries({
-          content_type: process.env.CTF_BLOG_POST_TYPE_ID
+          content_type: ctfConfig.CTF_BLOG_POST_TYPE_IDD
         })
       ]).then(([ posts ]) => {
         return [
@@ -27,12 +27,6 @@ export default {
           })
         ]
       })
-      /*
-      return cdaClient
-        .getEntries(ctfConfig.CTF_BLOG_POST_TYPE_ID)
-        .then(entries => {
-          return [...entries.items.map(entry => `/work/${entry.fields.slug}`)]
-        })*/
     },
     fallback: true
   },
