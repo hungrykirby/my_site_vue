@@ -17,7 +17,7 @@ export default {
   generate: {
     routes() {
       return Promise.all([
-        client.getEntries({
+        cdaClient.getEntries({
           content_type: process.env.CTF_BLOG_POST_TYPE_ID
         })
       ]).then(([ posts ]) => {
