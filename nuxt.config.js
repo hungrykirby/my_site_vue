@@ -16,11 +16,23 @@ export default {
   */
   generate: {
     routes() {
+      return Promise.all([
+        client.getEntries({
+          content_type: process.env.CTF_BLOG_POST_TYPE_ID
+        })
+      ]).then(([ posts ]) => {
+        return [
+          ...posts.items.map(post => {
+            return { route: `work/${post.fields.slug}`, payload: post }
+          })
+        ]
+      })
+      /*
       return cdaClient
         .getEntries(ctfConfig.CTF_BLOG_POST_TYPE_ID)
         .then(entries => {
           return [...entries.items.map(entry => `/work/${entry.fields.slug}`)]
-        })
+        })*/
     },
     fallback: true
   },
