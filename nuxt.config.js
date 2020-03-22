@@ -19,7 +19,6 @@ export default {
         cdaClient.getEntries({
           content_type: ctfConfig.CTF_BLOG_POST_TYPE_ID,
           order: '-sys.createdAt',
-          'fields.slug': 'whisper_speakers'
         })
       ]).then(([ posts ]) => {
         return [
