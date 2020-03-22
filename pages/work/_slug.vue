@@ -1,8 +1,8 @@
 <template>
   <section class="slug container">
     <img
-      :src="post.fields.main_image.fields.url"
-      :alt="post.fields.main_image.fields.title" srcset=""
+      :src="article.fields.main_image.fields.url"
+      :alt="article.fields.main_image.fields.title" srcset=""
     />
     <h2 class="slug_title">
       {{ article.fields.title }}
