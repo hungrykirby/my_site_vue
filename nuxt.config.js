@@ -31,7 +31,7 @@ export default {
       ]).then(([ posts ]) => {
         return [
           ...posts.items.map(post => {
-              return { route: post.fields.slug, payload: post }
+            return { route: `work/${post.fields.slug}`, payload: post }
           })
         ]
       })
