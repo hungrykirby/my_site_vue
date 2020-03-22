@@ -80,7 +80,10 @@ export default {
   transition: 'slide-right',
   async asyncData({ env, params }) {
     return await client
-      .getEntry(params.sys)
+      .getEntry({
+        content_type: env.CTF_BLOG_POST_TYPE_ID,
+        'fields.slug': params.slug
+      })
       .then(entrie => {
         return {
           article: entrie
