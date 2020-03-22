@@ -18,12 +18,13 @@ export default {
     routes() {
       return Promise.all([
         cdaClient.getEntries({
-          content_type: ctfConfig.CTF_BLOG_POST_TYPE_IDD
+          content_type: ctfConfig.CTF_BLOG_POST_TYPE_ID
         })
       ]).then(([ posts ]) => {
         return [
           ...posts.items.map(post => {
-            return { route: `work/${post.fields.slug}`, payload: post }
+            console.log(post.fields.slug);
+            return { route: `${post.fields.slug}`, payload: post }
           })
         ]
       })
@@ -66,7 +67,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~/plugins/contentful', ssr: false }
+
   ],
   /*
   ** Nuxt.js dev-modules

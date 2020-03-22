@@ -1,16 +1,4 @@
-* {
-  // background-color: red;
-  // transition: all 0.9s ease;
-}
-.container > section.works-section{
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  // @include smaller-media {
-    max-width: $break-point-large;
-  // }
-  // transition: all 0.9s ease;
-}
+// TOP画像部分
 .top-img-section{
   text-align: center;
   position: relative;
@@ -36,67 +24,79 @@
     }
   }
 }
-section:not(.top-img-section) > p {
-  font-size: 2rem;
-  padding: 20px 0px;
-  text-align: center;
-  margin: auto;
-  width: 100%;
-}
-.top {
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 0px 20px;
-  @include smaller-media {
-    width: 50%;
-    &:nth-child(2n) {
-      padding-left: 10px;
-    }
-    &:nth-child(2n+1) {
-      padding-right: 10px;
-    }
+
+// 本文部分
+.top-index{
+  section.works-section{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: $break-point-large;
   }
-  article, img{
+  section:not(.top-img-section) > p {
+    font-size: 2rem;
+    padding: 20px 0px;
+    text-align: center;
+    margin: auto;
     width: 100%;
   }
-  img {
-    height: 300px;
-    object-fit: cover;
-    vertical-align: middle;
-    filter: brightness(50%);
-    filter: blur(3px);
-    transition: all 0.1s ease;
-  }
-  article {
-    // transition: all 0.9s ease;
-    position: relative;
-    overflow: hidden;
-    & > div{
-      transition: all 0.8s ease;
-      
-      position: absolute;
-      z-index: 3;
-      bottom: 0px;
-      width: 100%;
-      // height: 100%;
-      background: $color-on-pict;
-      padding: 6px;
-      // bottom: -50%;
-      //top: 50%;
-      // left: 50%;
-      transform: translateY(100%);
-
-      & > p{
-        color: $color-black;
-        font-size: $date-font-size;
+  .top {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0px 20px;
+    @include smaller-media {
+      width: 50%;
+      &:nth-child(2n) {
+        padding-left: 10px;
       }
-      & > p.title {
-        padding-top: 6px;
-        font-size: $title-font-size;
+      &:nth-child(2n+1) {
+        padding-right: 10px;
+      }
+    }
+    article, img{
+      width: 100%;
+    }
+    img {
+      height: 300px;
+      object-fit: cover;
+      vertical-align: middle;
+      filter: brightness(50%);
+      filter: blur(3px);
+      transition: all 0.1s ease;
+    }
+    article {
+      // transition: all 0.9s ease;
+      position: relative;
+      overflow: hidden;
+      & > div{
+        transition: all 0.8s ease;
+
+        position: absolute;
+        z-index: 3;
+        bottom: 0px;
+        width: 100%;
+        // height: 100%;
+        background: $color-on-pict;
+        padding: 6px;
+        // bottom: -50%;
+        //top: 50%;
+        // left: 50%;
+        transform: translateY(100%);
+
+        & > p{
+          color: $color-black;
+          font-size: $date-font-size;
+        }
+        & > p.title {
+          padding-top: 6px;
+          font-size: $title-font-size;
+        }
       }
     }
   }
 }
+
+// スクロールでアクティブになる処理
 .top.scroll-active{
   div {
     transform: translateY(0%);

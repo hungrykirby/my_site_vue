@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container top-index">
     <TheMainImage/>
     <section class="works-section">
       <p>Works</p>

@@ -33,6 +33,7 @@ header {
     }
   }
 
+  // スマホハンバーガーメニュー
   @include larger-media{
     #nav-content > ul > li {
       padding: 20px 10px 10px;
@@ -115,6 +116,7 @@ header {
     }
   }
 
+  // PCヘッダー
   @include smaller-media{
     nav {
     width: 55%;
