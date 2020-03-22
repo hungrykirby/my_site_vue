@@ -5,7 +5,8 @@
   >
     <nuxt-link
       :to="{ name: 'work-slug', params: {
-        sys: id
+        sys: id,
+        slug: slug
       }}"
       class="wrapper"
       v-bind:class="[`${name_for_class}`]"
@@ -70,6 +71,10 @@ export default {
       default: ''
     },
     id: {
+      type: String,
+      default: ''
+    },
+    slug: {
       type: String,
       default: ''
     },

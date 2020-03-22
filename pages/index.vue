@@ -11,6 +11,7 @@
         :published_at="post.fields.publishedAt"
         :main_image_url="post.fields.main_image.fields.file.url"
         :main_image_title="post.fields.main_image.fields.title"
+        :slug="post.fields.slug"
         :id="post.sys.id"
         :date="post.sys.updatedAt"
         :name_for_class="`work-${i}`"

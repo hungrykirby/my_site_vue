@@ -1,7 +1,7 @@
 <template>
   <section class="slug container">
     <img
-      :src="article.fields.main_image.fields.url"
+      :src="article.fields.main_image.fields.file.url"
       :alt="article.fields.main_image.fields.title" srcset=""
     />
     <h2 class="slug_title">
@@ -68,28 +68,14 @@ import { createClient } from '~/plugins/contentful.js'
 
 const client = createClient()
 export default {
-  props: {
-    id: {
-      type: String,
-      default: ''
-    }
-  },
-  computed: {
-    
-  },
-  transition: 'slide-right',
-  async asyncData({ env, params }) {
-    return await client
-      .getEntry({
-        content_type: env.CTF_BLOG_POST_TYPE_ID,
-        'fields.slug': params.slug
-      })
-      .then(entrie => {
-        return {
-          article: entrie
-        }
-      })
-      .catch(console.error)
+    async asyncData({ env, params }) {
+    let article = null
+    await client.getEntries({
+      content_type: env.CTF_BLOG_POST_TYPE_ID,
+      'fields.slug': params.slug
+    }).then(res => (article = res.items[0])).catch(console.error)
+
+    return { article }
   }
 }
 </script>
