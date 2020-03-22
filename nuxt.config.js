@@ -31,7 +31,7 @@ export default {
       ]).then(([ posts ]) => {
         return [
           ...posts.items.map(post => {
-            return { route: `work/${post.fields.slug}`, payload: post }
+              return { route: post.fields.slug, payload: post }
           })
         ]
       })
@@ -74,7 +74,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/contentful.js'
+    { src: '@/plugins/contentful', ssr: true }
   ],
   /*
   ** Nuxt.js dev-modules
