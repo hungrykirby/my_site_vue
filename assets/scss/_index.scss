@@ -98,7 +98,7 @@
 
 // スクロールでアクティブになる処理
 .top.scroll-active{
-  div {
+  & > a > article > div {
     transform: translateY(0%);
   }
   img {

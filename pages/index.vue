@@ -21,7 +21,7 @@
 
 <script>
 import Work from '~/components/work.vue';
-import TheMainImage from '~/components/TheMainImage.vue'
+import TheMainImage from '~/components/TheMainImage.vue';
 import { createClient } from '~/plugins/contentful.js';
 
 const client = createClient()
@@ -37,10 +37,10 @@ export default {
       title: 'index'
     }
   },
-  asyncData({ env, params }) {
+  async asyncData({ env, params }) {
     return client
       .getEntries(env.CTF_BLOG_POST_TYPE_ID)
-      .then(entries => {
+      .then(entries => {        
         return {
           posts: entries.items
         }

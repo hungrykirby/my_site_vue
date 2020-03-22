@@ -56,7 +56,7 @@ export default {
     onResize () {
       this.height = document.documentElement.clientHeight
     },
-    getPosition () {  
+    getPosition () {
       if(this.$el){
         return this.$el.getBoundingClientRect().top
       }else{

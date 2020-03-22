@@ -4,11 +4,18 @@ const defaultConfig = {
   CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN
 }
 
-module.exports = {
+/*module.exports = {
   createClient(config = defaultConfig) {
     return contentful.createClient({
       space: config.CTF_SPACE_ID,
       accessToken: config.CTF_CDA_ACCESS_TOKEN
     })
   }
-}
+}*/
+
+export function createClient(config = defaultConfig) {
+  return contentful.createClient({
+    space: config.CTF_SPACE_ID,
+    accessToken: config.CTF_CDA_ACCESS_TOKEN
+  })
+};

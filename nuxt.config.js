@@ -1,4 +1,3 @@
-
 const pkg = require('./package')
 const { getConfigForKeys } = require('./lib/config.js')
 const ctfConfig = getConfigForKeys([
@@ -11,6 +10,15 @@ const { createClient } = require('./plugins/contentful')
 const cdaClient = createClient(ctfConfig)
 
 export default {
+  /* router: {
+    extendRoutes (routes, resolve) {
+      routes.push({
+        name: 'custom',
+        path: '*',
+        component: resolve(__dirname, 'pages/index.vue')
+      })
+    }
+  }, */
   /*
   ** Error 404 https://liginc.co.jp/449575
   */
@@ -23,8 +31,7 @@ export default {
       ]).then(([ posts ]) => {
         return [
           ...posts.items.map(post => {
-            console.log(post.fields.slug);
-            return { route: `${post.fields.slug}`, payload: post }
+            return { route: `work/${post.fields.slug}`, payload: post }
           })
         ]
       })
@@ -67,7 +74,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-
+    '~/plugins/contentful.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -98,6 +105,9 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+      /* if(!ctx.isDev) {
+        config.output.publicPath = '_nuxt/'
+      }*/
     }
   }
 }
