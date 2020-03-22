@@ -10,7 +10,31 @@ const { createClient } = require('./plugins/contentful')
 const cdaClient = createClient(ctfConfig)
 
 export default {
-  /* router: {
+  /*
+  ** Error 404 https://liginc.co.jp/449575
+  */
+  generate: {
+    async routes() {
+      return Promise.all([
+        cdaClient.getEntries({
+          content_type: ctfConfig.CTF_BLOG_POST_TYPE_ID,
+          order: '-sys.createdAt',
+          'fields.slug': 'whisper_speakers'
+        })
+      ]).then(([ posts ]) => {
+        return [
+          ...posts.items.map(post => {
+            return {
+							route: "work/" + post.fields.slug,
+							payload: post
+						}
+          })
+        ]
+      })
+    },
+    fallback: true
+  },
+  router: {
     extendRoutes (routes, resolve) {
       routes.push({
         name: 'custom',
@@ -18,25 +42,6 @@ export default {
         component: resolve(__dirname, 'pages/index.vue')
       })
     }
-  }, */
-  /*
-  ** Error 404 https://liginc.co.jp/449575
-  */
-  generate: {
-    routes() {
-      return Promise.all([
-        cdaClient.getEntries({
-          content_type: ctfConfig.CTF_BLOG_POST_TYPE_ID
-        })
-      ]).then(([ posts ]) => {
-        return [
-          ...posts.items.map(post => {
-            return { route: `work/${post.fields.slug}`, payload: post }
-          })
-        ]
-      })
-    },
-    fallback: true
   },
   env: {
     CTF_SPACE_ID: ctfConfig.CTF_SPACE_ID,
@@ -105,9 +110,9 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
-      /* if(!ctx.isDev) {
+      if(!ctx.isDev) {
         config.output.publicPath = '_nuxt/'
-      }*/
+      }
     }
   }
 }

@@ -65,7 +65,6 @@
 </template>
 <script>
 import { createClient } from '~/plugins/contentful.js'
-import { mapGetters } from 'vuex'
 
 const client = createClient()
 export default {
@@ -76,7 +75,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['setEyeCatch'])
+    
   },
   transition: 'slide-right',
   async asyncData({ env, params }) {
