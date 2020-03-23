@@ -1,8 +1,8 @@
 <template>
   <section class="slug container">
     <img
-      :src="article.fields.main_image.fields.file.url"
-      :alt="article.fields.main_image.fields.title" srcset=""
+      :src="setEyeCatch(article).url"
+      :alt="setEyeCatch(article).title" srcset=""
     />
     <h2 class="slug_title">
       {{ article.fields.title }}
@@ -63,10 +63,14 @@
 </template>
 <script>
 import { createClient } from '~/plugins/contentful.js'
+import { mapGetters } from 'vuex'
 
 const client = createClient()
 export default {
-    async asyncData({ env, params }) {
+  computed:{
+    ...mapGetters(['setEyeCatch']),
+  },
+  async asyncData({ env, params }) {
     let article = null
     await client.getEntries({
       content_type: env.CTF_BLOG_POST_TYPE_ID,
