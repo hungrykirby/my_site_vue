@@ -40,11 +40,17 @@ export default {
   },
   computed:{
     isInScreen(){
+      console.log(this.height);
       if((this.height !== 0 && this.position < 1 * this.height / 2) ||
         (process.browser && this.scrollY + this.height - document.body.scrollHeight + 50 >= 0
       )){
         return true
       }else{
+        if(this.height === 0){
+          if(process.browser){
+            this.height = document.documentElement.clientHeight
+          }
+        }
         return false
       }
     }
