@@ -28,7 +28,6 @@ import { createClient } from '~/plugins/contentful.js';
 const client = createClient()
 
 export default {
-  transition: 'slide-left',
   components: {
     TheMainImage,
     Work
@@ -41,7 +40,7 @@ export default {
   async asyncData({ env, params }) {
     return client
       .getEntries(env.CTF_BLOG_POST_TYPE_ID)
-      .then(entries => {       
+      .then(entries => {
         return {
           posts: entries.items
         }

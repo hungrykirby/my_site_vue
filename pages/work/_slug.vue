@@ -8,9 +8,7 @@
       {{ article.fields.title }}
     </h2>
     <p class="slug_date">{{ article.fields.publishedAt }}</p>
-    <div>
-      {{ article.fields.concept }}
-    </div>
+    <div v-html="$md.render(article.fields.concept)"></div>
     <div>
       <ul v-for="cat in article.fields.category" :key="cat.id">
         <li>{{ cat }}</li>
