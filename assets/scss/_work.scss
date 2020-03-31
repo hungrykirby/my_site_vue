@@ -1,0 +1,62 @@
+.slug{
+  & > *{
+    padding: 12px 0px;
+  }
+  p, li {
+    line-height: 20px;
+  }
+  div.md p {
+    padding-bottom: 8px;
+  }
+  .eyecatch{
+    width: 100%;
+    margin: auto;
+    display: block;
+    max-height: 850px;
+    object-fit: cover;
+  }
+  h2{
+    font-size: 24px;
+  }
+  h3{
+    padding-bottom: 6px;
+  }
+  .right {
+    float: right;
+  }
+  .clear{
+    clear: both;
+  }
+  .pictures{
+    width: 100%;
+    
+    img{
+      width: 100%;
+    }
+    .over-three{
+      width: 100%;
+      display: block;
+    }
+    @include smaller-media{
+      .over-three {
+        display: flex;
+
+        li{
+          width: 33%;
+        }
+        
+      }
+     
+    }
+  }
+  .row-li{
+    display: flex;
+
+    li{
+      padding: 3px 6px;
+      border-radius: 6px;
+      background-color: $color-lightgray;
+      margin-right: 6px;
+    }
+  }
+}

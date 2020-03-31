@@ -1,62 +1,68 @@
 <template>
   <section class="slug container">
-    <img
-      :src="setEyeCatch(article).url"
-      :alt="setEyeCatch(article).title" srcset=""
-    />
     <h2 class="slug_title">
       {{ article.fields.title }}
     </h2>
-    <p class="slug_date">{{ article.fields.publishedAt }}</p>
-    <div v-html="$md.render(article.fields.concept)"></div>
+    <p class="slug_date right">{{ article.fields.publishedAt }}</p>
+    <div class="md clear" v-html="$md.render(article.fields.concept)"></div>
+    <img
+      :src="setEyeCatch(article).url"
+      :alt="setEyeCatch(article).title" srcset=""
+      class="eyecatch"
+    >
     <div>
-      <ul v-for="cat in article.fields.category" :key="cat.id">
-        <li>{{ cat }}</li>
+      <h3>カテゴリー</h3>
+      <ul class="row-li">
+        <li v-for="cat in article.fields.category" :key="cat.id">{{ cat }}</li>
       </ul>
     </div>
     <div v-if="article.fields.links">
-      <ul v-for="l in article.fields.links" :key="l.id">
-        <li>
+      <h3>関連リンク</h3>
+      <ul class="row-li">
+        <li v-for="l in article.fields.links" :key="l.id">
           <a target="_blank" :href="l[0].url">{{ l[0].text }} </a>
         </li>
       </ul>
     </div>
     <div v-if="article.fields.members">
-      <ul v-for="m in article.fields.members" :key="m.id">
-        <li>
+      <h3>メンバー</h3>
+      <ul class="row-li">
+        <li v-for="m in article.fields.members" :key="m.id">
           <p v-if="m[0].url == ''">{{ m[0].name }}</p>
           <a v-else target="_blank" :href="m[0].url">{{ m[0].name }} </a>
         </li>
       </ul>
     </div>
     <div>
-      <ul v-for="role in article.fields.creater_role" :key="role.id">
-        <li>{{ role }}</li>
+      <h3>役割</h3>
+      <ul class="row-li">
+        <li v-for="role in article.fields.creater_role" :key="role.id">{{ role }}</li>
       </ul>
     </div>
     <div>
-      <ul v-for="place in article.fields.place" :key="place.id">
-        <li>{{ place }}</li>
+      <h3>発表・公開場所</h3>
+      <ul class="row-li">
+        <li v-for="place in article.fields.place" :key="place.id">{{ place }}</li>
       </ul>
     </div>
     <div>
-      <ul v-for="t in article.fields.tech" :key="t.id">
-        <li>{{ t }}</li>
-      </ul>
-    </div>
-    <div>
-      <p>{{ article.fields.publishedAt }}</p>
-    </div>
-    <div v-if="article.fields.pictures">
-      <ul v-for="pict in article.fields.pictures" :key="pict.id">
-        <li>
-          <img :src="pict.fields.file.url" :alt="pict.fields.title" srcset="">
-        </li>
+      <h3>使用技術</h3>
+      <ul class="row-li">
+        <li v-for="t in article.fields.tech" :key="t.id">{{ t }}</li>
       </ul>
     </div>
     <div v-if="article.fields.awards">
+      <h3>受賞歴</h3>
       <ul v-for="award in article.fields.awards" :key="award.id">
         <li>{{ award }}</li>
+      </ul>
+    </div>
+    <div class="pictures" v-if="article.fields.pictures">
+      <h3>その他画像</h3>
+      <ul v-bind:class="{ 'over-three': article.fields.pictures.length > 2 }">
+        <li v-for="pict in article.fields.pictures" :key="pict.id">
+          <img :src="pict.fields.file.url" :alt="pict.fields.title" srcset="">
+        </li>
       </ul>
     </div>
   </section>
