@@ -1,5 +1,4 @@
-// import defaultEyeCatch from '~/assets/images/defaultEyeCatch.png'
-import defaultEyeCatch from '~/assets/images/myself.jpg'
+import defaultEyeCatch from '~/assets/images/defaultEyeCatch.png'
 
 export const getters = {
   setEyeCatch: () => (post) => {
