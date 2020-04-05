@@ -1,5 +1,5 @@
 $color-black: #333;
-$color-lightgray: #eee;
+$color-lightgray: rgb(245, 245, 245);
 $color-base-white: #fff;
 
 $color-on-pict: rgba(230, 230, 230, 0.7);
@@ -10,6 +10,16 @@ $date-font-size: 12px;
 $break-point-small: 460px;
 $break-point-medium: 640px;
 $break-point-large: 960px;
+
+$padding-right-left-sp: 20px;
+$color-lightgray2: #aaa;
+
+$h3-background: rgb(240, 240, 240);
+$h3-border: rgb(168, 168, 168);
+
+$link-text: rgb(27, 149, 224);
+
+$header-height: 70px;
 
 @mixin small-media {
   @media screen and (max-width: $break-point-small) {

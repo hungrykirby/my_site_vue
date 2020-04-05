@@ -19,7 +19,7 @@ export default {
         cdaClient.getEntries({
           content_type: ctfConfig.CTF_BLOG_POST_TYPE_ID,
           order: '-sys.createdAt',
-        })
+        }),
       ]).then(([ posts ]) => {
         return [
           ...posts.items.map(post => {
@@ -27,7 +27,7 @@ export default {
 							route: "work/" + post.fields.slug,
 							payload: post
 						}
-          })
+          }),
         ]
       })
     },
