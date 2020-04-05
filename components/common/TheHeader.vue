@@ -8,11 +8,12 @@
 			<label for="nav-input" id="nav-open">
 				<span></span>
 			</label>
-			<label for="nav-input" id="nav-close" class="nav-unshown"></label>
+			<label for="nav-input" id="nav-close" class="nav-unshown nav-close-common"></label>
+			<label for="nav-input" id="nav-close2" class="nav-unshown nav-close-common"></label>
 			<div id="nav-content">
 				<ul>
 					<li>
-						<a href="">About</a>
+						<nuxt-link to="/about">About</nuxt-link>
 					</li>
 					<li>
 						<a href="">Contact</a>
