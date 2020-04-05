@@ -1,6 +1,6 @@
 <template>
   <section class="about container slug">
-    <h2 class="">塙 克樹</h2>
+    <h2 class="">塙 克樹の公式サイト</h2>
     <img
       :src="defaultEyeCatch"
       alt="塙克樹のよくわからない画像" srcset=""

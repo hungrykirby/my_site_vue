@@ -13,7 +13,7 @@ section a {
   margin: auto;
   padding-top: $header-height;
 }
-.slug {
+.container {
   & > *{
     padding: 12px 0px;
   }
@@ -123,6 +123,10 @@ header {
     p, a, h1{
       font-size: 1.6rem;
     }
+    a {
+      text-decoration: none;
+      color: black;
+    }
   }
 
   // スマホハンバーガーメニュー
@@ -165,7 +169,7 @@ header {
         left: 0;
         z-index: 9999;/*最前面に*/
         width: 100%;
-        height: 100px;
+        height: 150px;
         background: #fff;/*背景色*/
         transition: .3s ease-in-out;
         -webkit-transform: translateY(calc(-105% - #{$header-height}));

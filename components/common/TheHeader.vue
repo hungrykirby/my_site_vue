@@ -1,7 +1,7 @@
 <template>
 	<header class="header">
 		<div class="header-title">
-			<h1>きゃりかつルーム</h1>
+			<h1><a href="/">きゃりかつルーム</a></h1>
 		</div>
 		<nav>
 			<input id="nav-input" type="checkbox" class="nav-unshown">
@@ -12,6 +12,9 @@
 			<label for="nav-input" id="nav-close2" class="nav-unshown nav-close-common"></label>
 			<div id="nav-content">
 				<ul>
+					<li>
+						<a href="/">Top</a>
+					</li>
 					<li>
 						<nuxt-link to="/about">About</nuxt-link>
 					</li>
