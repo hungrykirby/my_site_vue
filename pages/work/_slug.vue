@@ -83,7 +83,17 @@ export default {
       'fields.slug': params.slug
     }).then(res => (article = res.items[0])).catch(console.error)
 
-    return { article }
+    return { article,
+      title: article.fields.title
+    }
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        { hid: 'description', name: 'description', content: '' }
+      ]
+    }
   }
 }
 </script>

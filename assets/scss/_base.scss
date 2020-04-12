@@ -19,11 +19,17 @@ section a {
   }
   p, li {
     line-height: 20px;
+    @include larger-media{
+      line-height: 24px;
+    }
   }
 }
 div.md { 
   p {
     padding-bottom: 8px;
+    @include larger-media{
+      padding-bottom: 12px;
+    }
   }
   hr {
     margin: 20px;

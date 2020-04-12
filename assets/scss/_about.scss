@@ -1,0 +1,35 @@
+.md {
+  table {
+    width: 100%;
+    tr {
+      & > td:first-of-type, & > th:first-of-type {
+        width: 150px;
+        @include larger-media {
+          width: 110px;
+        }
+        span {
+          display: none;
+        }
+      }
+      td, th{
+        padding: 3px 12px;
+      }
+    }
+    thead {
+      tr {
+        background: $color-lightgray2;
+        display: none;
+      }
+    }
+    tbody{
+      tr {
+        &:nth-child(2n+1) {
+          background: $color-lightgray;
+        }
+        &:nth-child(2n) {
+          background: $color-base-white;
+        }
+      }
+    }
+  }
+}

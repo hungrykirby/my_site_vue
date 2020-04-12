@@ -34,7 +34,8 @@ export default {
   },
   head() {
     return {
-      title: 'index'
+      title: '',
+      titleTemplate: 'きゃりかつルーム'
     }
   },
   async asyncData({ env, params }) {
