@@ -12,12 +12,20 @@
 <script>
 import defaultEyeCatch from '~/assets/images/myself.jpg'
 import aboutMd from '~/assets/markdown/selfintroduce.md'
+import Meta from '~/assets/mixins/meta'
 export default {
+  mixins: [Meta],
   data(){
     return{
       defaultEyeCatch: defaultEyeCatch,
-      aboutMd: aboutMd
+      aboutMd: aboutMd,
+      meta: {
+        title: "About",
+        url: `https://zealous-saha-65c494.netlify.com/about`,
+        type: 'article',
+        description: '塙 克樹について。塙克樹ってどんな人物なの？'
+      }
     }
   }
 }
-</script>>
+</script>

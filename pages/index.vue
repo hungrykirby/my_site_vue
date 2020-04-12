@@ -34,7 +34,18 @@ export default {
   },
   head() {
     return {
-      title: 'index'
+      title: '',
+      titleTemplate: 'きゃりかつルーム',
+      meta: [
+        { hid: 'description', name: 'description', content: '塙克樹公式サイトきゃりかつルームのトップ' },
+        { hid: 'og:type', property: 'og:type', content: 'article' },
+        { hid: 'og:title', property: 'og:title', content: 'きゃりかつルーム' },
+        { hid: 'og:description', property: 'og:description', content: '塙克樹公式サイトきゃりかつルームのトップ' },
+        { hid: 'og:url', property: 'og:url', content: `https://zealous-saha-65c494.netlify.com` },
+        { hid: 'og:image', property: 'og:image', content: '' },
+        { hid: 'twitter:card', name: 'twitter:card', content: "summary" },
+        { hid: 'twitter:site', name: 'twitter:site', content: "@hungrykirby"}
+      ],
     }
   },
   async asyncData({ env, params }) {
@@ -45,13 +56,10 @@ export default {
       })
       .then(entries => {
         return {
-          posts: entries.items
+          posts: entries.items,
         }
       })
       .catch(console.error)
   }
 }
 </script>
-
-<style>
-</style>

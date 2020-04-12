@@ -1,7 +1,7 @@
 {
-  "name": "my_site_vue",
+  "name": "hungrykirby-room",
   "version": "1.0.0",
-  "description": "My 202003 Site with vue and nuxt",
+  "description": "きゃりかつルーム 塙克樹の公式サイト",
   "author": "hungrykirby",
   "private": true,
   "scripts": {

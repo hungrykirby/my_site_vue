@@ -70,9 +70,11 @@
 <script>
 import { createClient } from '~/plugins/contentful.js'
 import { mapGetters } from 'vuex'
+import Meta from '~/assets/mixins/meta'
 
 const client = createClient()
 export default {
+  mixins: [Meta],
   computed:{
     ...mapGetters(['setEyeCatch']),
   },
@@ -83,7 +85,15 @@ export default {
       'fields.slug': params.slug
     }).then(res => (article = res.items[0])).catch(console.error)
 
-    return { article }
-  }
+    return { article,
+      meta: {
+        title: article.fields.title,
+        description: article.fields.description,
+        url: `https://${env.SITE_URL}/work/${article.fields.slug}`,
+        type: 'article',
+        image: 'https:' + article.fields.main_image.fields.file.url
+      }
+    }
+  },
 }
 </script>
