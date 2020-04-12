@@ -89,7 +89,7 @@ export default {
       meta: {
         title: article.fields.title,
         description: article.fields.description,
-        url: `https://${env.SITE_URL}/work/${article.fields.slug}`,
+        url: `http://${env.SITE_URL}/work/${article.fields.slug}`,
         type: 'article',
         image: 'https:' + article.fields.main_image.fields.file.url
       }
