@@ -91,7 +91,7 @@ export default {
         description: article.fields.description,
         url: `https://${env.SITE_URL}/work/${article.fields.slug}`,
         type: 'article',
-        image: 'https:' + article.fields.main_image.fields.file.url
+        image: 'http:' + article.fields.main_image.fields.file.url
       }
     }
   },
