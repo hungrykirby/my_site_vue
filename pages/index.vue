@@ -43,7 +43,7 @@ export default {
         { hid: 'og:description', property: 'og:description', content: '塙克樹公式サイトきゃりかつルームのトップ' },
         { hid: 'og:url', property: 'og:url', content: `https://zealous-saha-65c494.netlify.com` },
         { hid: 'og:image', property: 'og:image', content: 'http://zealous-saha-65c494.netlify.com/myself.jpg' },
-        { hid: 'twitter:card', name: 'twitter:card', content: "summary_large_image" },
+        { hid: 'twitter:card', name: 'twitter:card', content: "summary" },
         { hid: 'twitter:site', name: 'twitter:site', content: "@hungrykirby"}
       ],
     }
