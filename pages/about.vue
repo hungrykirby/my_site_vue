@@ -23,7 +23,8 @@ export default {
         title: "About",
         url: `https://zealous-saha-65c494.netlify.com/about`,
         type: 'article',
-        description: '塙 克樹について。塙克樹ってどんな人物なの？'
+        description: '塙 克樹について。塙克樹ってどんな人物なの？',
+        image: 'http://zealous-saha-65c494.netlify.com/myself.jpg'
       }
     }
   }

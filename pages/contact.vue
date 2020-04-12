@@ -17,7 +17,8 @@ export default {
         title: "Contact",
         url: `https://zealous-saha-65c494.netlify.com/contact`,
         type: 'article',
-        description: '塙 克樹のお問い合わせ先'
+        description: '塙 克樹のお問い合わせ先',
+        image: 'http://zealous-saha-65c494.netlify.com/myself.jpg'
       }
     }
   },
