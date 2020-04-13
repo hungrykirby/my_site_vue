@@ -47,7 +47,8 @@ export default {
     CTF_CDA_ACCESS_TOKEN: ctfConfig.CTF_CDA_ACCESS_TOKEN,
     CTF_BLOG_POST_TYPE_ID: ctfConfig.CTF_BLOG_POST_TYPE_ID
   },
-  mode: 'universal',
+  // mode: 'universal',
+  mode: 'spa',
   /*
   ** Headers of the page
   */
@@ -66,7 +67,11 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  /* loading: { 
+    color: 'blue',
+    height: '5px'
+  }, */
+  loading: '~/components/loading.vue',
   /*
   ** Global CSS
   */
