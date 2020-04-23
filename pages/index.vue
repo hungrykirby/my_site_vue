@@ -48,6 +48,12 @@ export default {
       ],
     }
   },
+  data(){
+  },
+  methods: {
+  },
+  mounted() {
+  },
   async asyncData({ env, params }) {
     return client
       .getEntries({

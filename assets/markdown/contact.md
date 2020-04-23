@@ -41,3 +41,9 @@
 Qiitaに移行予定
 
 技術系の備忘録を記載しています。
+
+### Amazonほしいものリスト
+
+<a href="https://www.amazon.jp/hz/wishlist/ls/1Y7A9RT6WE583?ref_=wl_share" target="_blank">Amazonほしいものリスト</a>
+
+Amazonほしいものリスト

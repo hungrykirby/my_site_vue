@@ -1,7 +1,7 @@
 <template>
   <div
     class="top"
-    v-bind:class="{'scroll-active': isInScreen}"
+    v-bind:class="{'scroll-active': isInScreen }"
   >
     <nuxt-link
       :to="{ name: 'work-slug', params: {
@@ -11,12 +11,12 @@
       class="wrapper"
       v-bind:class="[`${name_for_class}`]"
     >
-      <article class="work">
-        <div>
+      <article class="work not-display-before-load" v-bind:class="{'loaded': loaded}">
+        <div class="">
           <p class="title">{{ title }}</p>
           <p class="date">{{ published_at }}</p>
         </div>
-        <img class="top_image" :src="main_image_url" :alt="main_image_title" />
+        <img class="top_image" v-bind:src="main_image_url" v-bind:alt="main_image_title" v-on:load="onLoaded"  />
       </article>
     </nuxt-link>
   </div>
@@ -28,6 +28,7 @@ export default {
       scrollY: 0,
       height: 0,
       position: 0,
+      loaded: false,
     }
   },
   mounted() {
@@ -55,6 +56,11 @@ export default {
     }
   },
   methods: {
+    onLoaded() {
+      this.loaded = true;
+      this.onScroll();
+      this.onResize();
+    },
     onScroll () {
       this.scrollY = window.pageYOffset;
       this.position = this.getPosition();
