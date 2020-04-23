@@ -3,7 +3,7 @@
     <img v-bind:src="siteTopImageSrc" alt="" srcset="" v-on:load="onLoaded" >
     <p>祖父は言った
       <br>
-      「まじめに生きてきて後悔したことはないと」
+      「まじめに生きてきて後悔したことはない」と
       <br>
       その言葉を胸に
     </p>
