@@ -1,7 +1,7 @@
 <template>
   <div
     class="top"
-    v-bind:class="{'scroll-active': isInScreen || true}"
+    v-bind:class="{'scroll-active': isInScreen }"
   >
     <nuxt-link
       :to="{ name: 'work-slug', params: {
@@ -11,8 +11,8 @@
       class="wrapper"
       v-bind:class="[`${name_for_class}`]"
     >
-      <article class="work">
-        <div class="not-display-before-load" v-bind:class="{'loaded': loaded}">
+      <article class="work not-display-before-load" v-bind:class="{'loaded': loaded}">
+        <div class="">
           <p class="title">{{ title }}</p>
           <p class="date">{{ published_at }}</p>
         </div>

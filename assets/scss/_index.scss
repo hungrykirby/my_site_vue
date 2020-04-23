@@ -98,7 +98,9 @@
 
 // スクロールでアクティブになる処理
 .top.scroll-active{
-  & > a > article > div {
+  & > a > article.not-display-before-load.loaded > div {
+    // 初期読み込みタイミングで下にすっと動いてしまうので
+    // .not-display-before-load.loadedを加えている。
     transform: translateY(0%);
   }
   img {
@@ -110,18 +112,32 @@
 .not-display-before-load{
   opacity: 0;
   visibility: hidden;
-  transition: all 0.9s linear;
-
-  /*p {
-    visibility: hidden;;
-  }*/
+  transition: all 0.9s ease-in-out;
+  &.loaded{
+    visibility: visible;
+    opacity: 1;
+  }
 }
-.not-display-before-load.loaded{
-  visibility: visible;
-  opacity: 1;
-
-  /*p {
-    visibility: visible;;
-  }*/
+.top-img-section{
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease-in-out;
+  &.top-loaded{
+    visibility: visible;
+    opacity: 1;
+  }
+  & + .works-section{
+    p {
+      opacity: 0;
+      visibility: hidden;
+      transition: all 1.0s ease-out;
+    }
+  }
+  &.top-loaded + .works-section{
+    p{
+      opacity: 1;
+      visibility: visible;
+    }
+  }
 }
 
