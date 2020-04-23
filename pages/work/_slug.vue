@@ -89,7 +89,7 @@ export default {
       meta: {
         title: article.fields.title,
         description: article.fields.description,
-        url: `https://zealous-saha-65c494.netlify.com/work/${article.fields.slug}/`,
+        url: `https://zealous-saha-65c494.netlify.app/work/${article.fields.slug}/`,
         type: 'article',
         image: 'http:' + article.fields.main_image.fields.file.url
       }

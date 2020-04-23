@@ -15,10 +15,10 @@ export default {
       contactMd: contactMd,
       meta: {
         title: "Contact",
-        url: `https://zealous-saha-65c494.netlify.com/contact`,
+        url: `https://zealous-saha-65c494.netlify.app/contact`,
         type: 'article',
         description: '塙 克樹のお問い合わせ先',
-        image: 'http://zealous-saha-65c494.netlify.com/myself.jpg'
+        image: 'http://zealous-saha-65c494.netlify.app/myself.jpg'
       }
     }
   },
