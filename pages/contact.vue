@@ -14,7 +14,7 @@ export default {
     return{
       contactMd: contactMd,
       meta: {
-        title: "Contact",
+        title: "お問い合わせ",
         url: `https://zealous-saha-65c494.netlify.app/contact`,
         type: 'article',
         description: '塙 克樹のお問い合わせ先',
