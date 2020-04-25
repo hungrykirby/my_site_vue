@@ -100,6 +100,8 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     '@nuxtjs/markdownit',
+    // site map
+    '@nuxtjs/sitemap',
   ],
 
   markdownit: {
@@ -122,6 +124,28 @@ export default {
       if(!ctx.isDev) {
         config.output.publicPath = '_nuxt/'
       }
+    }
+  },
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: 'https://hanakatsuruby.me',
+    generate: true,
+    async routes() {
+      return Promise.all([
+        cdaClient.getEntries({
+          content_type: ctfConfig.CTF_BLOG_POST_TYPE_ID,
+          order: '-sys.createdAt',
+        }),
+      ]).then(([ posts ]) => {
+        return [
+          ...posts.items.map(post => {
+            return {
+							route: "work/" + post.fields.slug,
+							payload: post
+						}
+          }),
+        ]
+      })
     }
   }
 }
