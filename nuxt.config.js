@@ -120,11 +120,11 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, {ctx, loaders} ) {
+    extend (config, ctx) {
       if(!ctx.isDev) {
         config.output.publicPath = '_nuxt/'
       }
-      loaders.imgUrl.limit = 10000
+      ctx.imgUrl.limit = 10000
     }
   },
   sitemap: {
