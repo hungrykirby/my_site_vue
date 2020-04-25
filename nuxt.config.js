@@ -124,7 +124,7 @@ export default {
       if(!ctx.isDev) {
         config.output.publicPath = '_nuxt/'
       }
-      ctx.loaders.imgUrl.limit = 10000
+      ctx.loaders.imgUrl.limit = 100000
     }
   },
   sitemap: {
