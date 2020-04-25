@@ -15,10 +15,10 @@ export default {
       contactMd: contactMd,
       meta: {
         title: "お問い合わせ",
-        url: `https://zealous-saha-65c494.netlify.app/contact`,
+        url: `https://hanakatsuruby.me/contact`,
         type: 'article',
         description: '塙 克樹のお問い合わせ先',
-        image: 'http://zealous-saha-65c494.netlify.app/myself.jpg'
+        image: 'http://hanakatsuruby.me/myself.jpg'
       }
     }
   },

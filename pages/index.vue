@@ -41,8 +41,8 @@ export default {
         { hid: 'og:type', property: 'og:type', content: 'article' },
         { hid: 'og:title', property: 'og:title', content: 'きゃりかつルーム' },
         { hid: 'og:description', property: 'og:description', content: '塙克樹公式サイトきゃりかつルームのトップ' },
-        { hid: 'og:url', property: 'og:url', content: `https://zealous-saha-65c494.netlify.app` },
-        { hid: 'og:image', property: 'og:image', content: 'http://zealous-saha-65c494.netlify.app/myself.jpg' },
+        { hid: 'og:url', property: 'og:url', content: `https://hanakatsuruby.me` },
+        { hid: 'og:image', property: 'og:image', content: 'http://hanakatsuruby.me/myself.jpg' },
         { hid: 'twitter:card', name: 'twitter:card', content: "summary" },
         { hid: 'twitter:site', name: 'twitter:site', content: "@hungrykirby"}
       ],

@@ -21,10 +21,10 @@ export default {
       aboutMd: aboutMd,
       meta: {
         title: "もっと知りたい",
-        url: `https://zealous-saha-65c494.netlify.app/about`,
+        url: `https://hanakatsuruby.me/about`,
         type: 'article',
         description: '塙 克樹について。塙克樹ってどんな人物なの？',
-        image: 'http://zealous-saha-65c494.netlify.app/myself.jpg'
+        image: 'http://hanakatsuruby.me/myself.jpg'
       }
     }
   }
