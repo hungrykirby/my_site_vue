@@ -2,7 +2,7 @@
   <section class="about container slug">
     <h2 class="">塙 克樹の公式サイト</h2>
     <img
-      :src="defaultEyeCatch"
+      :src="require('~/assets/imgs/defaultEyeCatch.jpg')"
       alt="塙克樹のよくわからない画像" srcset=""
       class="eyecatch"
     >
