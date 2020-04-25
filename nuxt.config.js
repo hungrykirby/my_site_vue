@@ -129,7 +129,7 @@ export default {
   sitemap: {
     path: '/sitemap.xml',
     hostname: 'https://hanakatsuruby.me',
-    generate: true,
+    generate: true, // WARN  [sitemap-module] The generate option isn't needed anymore in your config. Please remove it!
     async routes() {
       return Promise.all([
         cdaClient.getEntries({
