@@ -2,7 +2,7 @@
   <section class="about container slug">
     <h2 class="">塙 克樹の公式サイト</h2>
     <img
-      :src="require('~/assets/imgs/defaultEyeCatch.jpg')"
+      :src="defaultEyeCatch"
       alt="塙克樹のよくわからない画像" srcset=""
       class="eyecatch"
     >
@@ -10,14 +10,15 @@
   </section>
 </template>
 <script>
-import defaultEyeCatch from '~/assets/imgs/defaultEyeCatch.jpg'
+// import defaultEyeCatch from '~/assets/imgs/defaultEyeCatch.jpg'
 import aboutMd from '~/assets/markdown/selfintroduce.md'
 import Meta from '~/assets/mixins/meta'
 export default {
   mixins: [Meta],
   data(){
     return{
-      defaultEyeCatch: defaultEyeCatch,
+      defaultEyeCatch: require('~/assets/imgs/defaultEyeCatch.jpg'),
+      // defaultEyeCatch: defaultEyeCatch, // これをそのまま使うと/aboutに直接アクセスすると/about/_nuxt/...jpgとなってしまう
       aboutMd: aboutMd,
       meta: {
         title: "もっと知りたい",
