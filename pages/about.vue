@@ -10,7 +10,7 @@
   </section>
 </template>
 <script>
-import defaultEyeCatch from '~/assets/images/defaultEyeCatch.jpg'
+import defaultEyeCatch from '~/assets/imgs/defaultEyeCatch.jpg'
 import aboutMd from '~/assets/markdown/selfintroduce.md'
 import Meta from '~/assets/mixins/meta'
 export default {
