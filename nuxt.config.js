@@ -24,7 +24,7 @@ export default {
         return [
           ...posts.items.map(post => {
             return {
-							route: "work/" + post.fields.slug + "/",
+							route: "work/" + post.fields.slug,
 							payload: post
 						}
           }),

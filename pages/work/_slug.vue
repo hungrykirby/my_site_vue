@@ -89,7 +89,7 @@ export default {
       meta: {
         title: article.fields.title,
         description: article.fields.description,
-        url: `https://hanakatsuruby.me/work/${article.fields.slug}/`,
+        url: `https://hanakatsuruby.me/work/${article.fields.slug}`,
         type: 'article',
         image: 'http:' + article.fields.main_image.fields.file.url
       }
