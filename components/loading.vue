@@ -11,7 +11,7 @@ export default {
   }),
   methods: {
     start () {
-      // サイト内遷移の場合はfirstLandingがundefinedになる
+      // サイト内遷移の場合はfirstLandingがundefinedにならない
       if(this.firstLanding !== 0){
         this.loading = true
       }
