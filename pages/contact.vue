@@ -5,7 +5,6 @@
   </section>
 </template>
 <script>
-import defaultEyeCatch from '~/assets/imgs/defaultEyeCatch.jpg'
 import contactMd from '~/assets/markdown/contact.md'
 import Meta from '~/assets/mixins/meta'
 export default {
