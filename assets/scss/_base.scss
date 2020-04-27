@@ -122,7 +122,7 @@ header {
   height: $header-height;
   position: fixed;
   background: $color-base-white;
-  z-index: 9;
+  z-index: 3;
 
   .header-title {
     text-align: center;
@@ -158,7 +158,7 @@ header {
       .nav-close-common {
         display: none;/*はじめは隠しておく*/
         position: fixed;
-        z-index: 101;
+        z-index: 4;
         left: 0;
         width: 100%;
         background: black;
@@ -179,7 +179,7 @@ header {
         position: fixed;
         top: 0;
         left: 0;
-        z-index: 9999;/*最前面に*/
+        z-index: 10;/*最前面に*/
         width: 100%;
         height: 150px;
         background: #fff;/*背景色*/
