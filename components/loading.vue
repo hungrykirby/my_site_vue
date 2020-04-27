@@ -36,6 +36,6 @@ export default {
   text-align: center;
   padding-top: 200px;
   font-size: 30px;
-  z-index: 10000000000000000000;
+  z-index: 1000;
 }
 </style>
