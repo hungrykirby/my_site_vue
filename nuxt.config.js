@@ -105,6 +105,9 @@ export default {
     '@nuxtjs/markdownit',
     // site map
     '@nuxtjs/sitemap',
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-132766980-1'
+    }],
   ],
 
   markdownit: {
