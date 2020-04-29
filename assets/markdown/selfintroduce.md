@@ -28,7 +28,7 @@
 
 メイン？は`JavaScript` `Python` `Ruby` `Processing`だが、`Scala` `OCaml` `Prolog` `Objective-C` `C` `C++` `C#` `Java` `PHP` `Unity(C#)` も触れたことがある（すごそう）。 
 
-## このさきやってみたいこと
+### このさきやってみたいこと
 
 `IT × 社会課題` の分野に関心がある。
 
