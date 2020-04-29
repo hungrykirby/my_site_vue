@@ -103,6 +103,7 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     '@nuxtjs/markdownit',
+    '@nuxtjs/pwa', // pwa https://qiita.com/b1san/items/e9b8d9622f5e81939fb5
     // site map
     '@nuxtjs/sitemap',
     ['@nuxtjs/google-analytics', {
@@ -132,6 +133,18 @@ export default {
       }
       ctx.loaders.imgUrl.limit = 100000
     }
+  },
+  manifest: {
+    name: 'きゃりかつルーム',
+    short_name: 'かつ部屋',
+    title: 'きゃりかつルーム',
+    'og:title': 'きゃりかつルーム',
+    lang: 'ja',
+    background_color: '#fff',
+    theme_color: '#000',
+    description: "きゃりかつルーム（塙克樹の部屋）",
+    display: 'standalone',
+    start_url: '/'
   },
   sitemap: {
     path: '/sitemap.xml',
