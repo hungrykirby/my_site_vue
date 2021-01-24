@@ -20,7 +20,7 @@
     "nuxt": "^2.14.12"
   },
   "devDependencies": {
-    "contentful": "^8.1.7",
+    "contentful": "^8.1.0",
     "node-sass": "^4.13.1",
     "reset-css": "^5.0.1",
     "sass-loader": "^8.0.2"
