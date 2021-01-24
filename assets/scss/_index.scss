@@ -106,6 +106,12 @@
   img {
     filter: brightness(100%);
     filter: blur(0px);
+    // マウスオーバーで画像がズームされる処理
+    // ただし画像がブラーの時には実行しない
+    transition: transform 0.1s linear;
+    &:hover{
+      transform: scale(1.1,1.1);
+    }
   }
 }
 
@@ -140,4 +146,3 @@
     }
   }
 }
-
