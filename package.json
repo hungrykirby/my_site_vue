@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "contentful": "^7.15.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "reset-css": "^5.0.1",
     "sass-loader": "^8.0.2"
   }
