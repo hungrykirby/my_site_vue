@@ -1,7 +1,6 @@
 @charset "utf-8";
 
-@import '_variables';
-@import '_base';
-@import '_index';
-@import '_work';
-@import '_about';
+@use 'base';
+@use 'index';
+@use 'work';
+@use 'about';
