@@ -17,6 +17,13 @@ URLにrubyって入れたけど、これが公開されたので `Ruby` がベ�
 Node.js 24 LTS（24.22.1）と Yarn Classic（1.x）を使用します。
 Node.js のバージョンは `.nvmrc` に指定しています（Netlify もこの指定を使用）。
 ビルドには `CTF_BLOG_POST_TYPE_ID`、`CTF_SPACE_ID`、`CTF_CDA_ACCESS_TOKEN` の環境変数が必要です。
+ローカルでは `.env` から、Netlify では管理画面に設定した環境変数から読み込みます。
+環境変数が設定されていれば `.env` ファイルは不要です。
+
+Nuxt 2 / webpack 4 用の `sass-loader` は Sass の旧 JS API を使用するため、
+`legacy-js-api` の非推奨警告だけを一時的に抑制しています。
+これは API の移行ではありません。Sass 2 へ更新する前に、modern API 対応の
+ビルド基盤へ移行し、`silenceDeprecations` の指定を削除してください。
 
 ``` bash
 # use the project Node.js version (with nvm)

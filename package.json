@@ -15,11 +15,11 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.12.5",
-    "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/google-analytics": "^2.2.3",
     "@nuxtjs/markdownit": "^2.0.0",
     "@nuxtjs/pwa": "^3.3.4",
     "@nuxtjs/sitemap": "^2.2.1",
+    "dotenv": "^8.2.0",
     "nuxt": "^2.18.1"
   },
   "devDependencies": {

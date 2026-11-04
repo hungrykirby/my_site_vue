@@ -47,8 +47,7 @@ export default {
     CTF_CDA_ACCESS_TOKEN: ctfConfig.CTF_CDA_ACCESS_TOKEN,
     CTF_BLOG_POST_TYPE_ID: ctfConfig.CTF_BLOG_POST_TYPE_ID
   },
-  mode: 'universal', // spaにすると本番でリダイレクトループがindex以外で始まった。
-  // mode: 'spa',
+  ssr: true,
   /*
   ** Headers of the page
   */
@@ -100,8 +99,6 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv',
     '@nuxtjs/markdownit',
     '@nuxtjs/pwa', // pwa https://qiita.com/b1san/items/e9b8d9622f5e81939fb5
     // site map
@@ -124,6 +121,15 @@ export default {
   ** Build configuration
   */
   build: {
+    loaders: {
+      scss: {
+        sassOptions: {
+          // sass-loader 10 / webpack 4 still require the legacy API.
+          // Remove this suppression when migrating to a modern Sass loader.
+          silenceDeprecations: ['legacy-js-api']
+        }
+      }
+    },
     /*
     ** You can extend webpack config here
     */
